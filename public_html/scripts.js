@@ -3,28 +3,32 @@
 
 
 $("document").ready(function() {
-  $(".1").css("background-color", "purple");  
-  $(".1").css("font-style", "italic");
+  $("h1").css("font-style", "italic");
   $(".1").css("text-align", "center");
-   
-  $('h1').css("background-color", "green"); 
+  $("p").css('color', 'purple');
+  $('h1').css("background-color", "blue"); 
+  $('h1').css('border', 'solid');
 });
 
+//these are my background color/image
 $("document").ready(function() {
-    $("body").css("background-color", "grey");
-    $("body").css("background-image", 'https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRdzVkKNy79CdtSbqBAm8WYSaGOtqgxyl-qslQknxsXFMs31IGw');
+    $("body").css("background-color", " grey");
+    $('body').css('background-image',"url(http://www.saidthegramophone.com/images/Deal_with_it_dog_gif.gif)");
+    $("body").css("background-size","cover");
     
     });  
     
     
     $("document").ready(function() {
-        $('#oneButton').bind('click', alertButtonClick);
+        $('h1').bind('mouseOver', AboutMe);
         
     });
     
-    function alertButtonClick(){
-        alert("there was a button clicked");
+    function AboutMe(){
+        $("p")("this is my about me page");
+        
     }
     
- $('body').css('background-image',"url(http://www.saidthegramophone.com/images/Deal_with_it_dog_gif.gif)");
- $("body").css("background-size","cover");
+ 
+ 
+ 
