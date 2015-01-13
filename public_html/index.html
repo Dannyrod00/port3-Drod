@@ -11,10 +11,18 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
         <script type="text/javascript"
-        src=http://code.jquery-latest.js"></script>
+        src="http://code.jquery-latest.js"></script>
+        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+        
+          <link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
+  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+  <link rel="stylesheet" href="/resources/demos/style.css">
         
     </head>
     <body>
+    <header>   
         
         <div class="1">
             
@@ -26,12 +34,123 @@ and open the template in the editor.
             <div>
                 
                 <h1>Technology_____About Me_____Projects</h1>
-                
-                <p>Hello</p>
-                
-            </div>
+
+    </div>
             
         </div>
+
+  <script>
+  $(function() {
+    $( "#accordion" ).accordion({
+      event: "click hoverintent"
+    });
+  });
+  
+   $.event.special.hoverintent = {
+    setup: function() {
+      $( this ).bind( "mouseover", jQuery.event.special.hoverintent.handler );
+    },
+    teardown: function() {
+      $( this ).unbind( "mouseover", jQuery.event.special.hoverintent.handler );
+    },
+    handler: function( event ) {
+      var currentX, currentY, timeout,
+        args = arguments,
+        target = $( event.target ),
+        previousX = event.pageX,
+        previousY = event.pageY;
+ 
+      function track( event ) {
+        currentX = event.pageX;
+        currentY = event.pageY;
+      };
+ 
+      function clear() {
+        target
+          .unbind( "mousemove", track )
+          .unbind( "mouseout", clear );
+        clearTimeout( timeout );
+      }
+ 
+      function handler() {
+        var prop,
+          orig = event;
+  
+  if ( ( Math.abs( previousX - currentX ) +
+            Math.abs( previousY - currentY ) ) < 7 ) {
+          clear();
+ 
+          event = $.Event( "hoverintent" );
+          for ( prop in orig ) {
+            if ( !( prop in event ) ) {
+              event[ prop ] = orig[ prop ];
+            }
+          }
+          // Prevent accessing the original event since the new event
+          // is fired asynchronously and the old event is no longer
+          // usable (#6028)
+          delete event.originalEvent;
+ 
+          target.trigger( event );
+        } else {
+          previousX = currentX;
+          previousY = currentY;
+          timeout = setTimeout( handler, 100 );
+        }
+      }
+ 
+      timeout = setTimeout( handler, 100 );
+      target.bind({
+        mousemove: track,
+        mouseout: clear
+      });
+    }
+  };
+  </script>
+</header>
+<body>
+ 
+    
+<div id="accordion">
+  <h3>portfolio 1</h3>
+  <div>
+    <p>
+    
+    </p>
+  </div>
+  <h3>portfolio 2</h3>
+  <div>
+    <p>
+  hello
+    </p>
+  </div>
+  <h3>Snake</h3>
+  <div>
+    <p>
+   hello
+    </p>
+    <ul>
+      <li>List item one</li>
+      <li>List item two</li>
+      <li>List item three</li>
+    </ul>
+  </div>
+  <h3>Mario</h3>
+  <div>
+    <p>
+   Hello
+    </p>
+    <p>
+    This
+    </p>
+  </div>
+</div>
+ 
+ 
+</body>
+</html>
+              
+         
         
         
             
@@ -41,7 +160,6 @@ and open the template in the editor.
            
                 <script type="text/javascript" src="scripts.js"></script>
 
-        
-                
+                  
     </body>
 </html>

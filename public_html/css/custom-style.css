@@ -1,0 +1,47 @@
+       
+        /*this is my border color and style*/
+/*       div {
+       border-color: none;
+       border-width: 3px;
+       border-style: solid;
+       padding: 60px;
+       }*/
+
+       .container {
+       border-color: none;
+       color:green;
+       }
+
+/*       .row {
+       border-color: none;
+       color:green;
+       }*/
+       
+       /*this is the title for all my pages*/
+       h1 {
+           color: blueviolet;
+           border-color: black;
+           border-width: 2px;
+           border-style: solid;
+           text-align: center;
+           font-style: italic;
+           font-size: 50px
+           
+       }
+       
+      
+       
+       
+       
+       marquee {
+            color: blueviolet;
+       }
+            
+         
+            
+         
+            
+              
+        /*this is my background image*/     
+       body{background-image: url('http://fc06.deviantart.net/fs70/f/2012/164/5/9/hexagon_wallpaper_v2_by_wideo-d53ed00.png');}     
+       

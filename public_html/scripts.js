@@ -14,21 +14,14 @@ $("document").ready(function() {
 $("document").ready(function() {
     $("body").css("background-color", " grey");
     $('body').css('background-image',"url(http://www.saidthegramophone.com/images/Deal_with_it_dog_gif.gif)");
-    $("body").css("background-size","cover");
-    
-    });  
-    
-    
-    $("document").ready(function() {
-        $('h1').bind('mouseOver', AboutMe);
-        
-    });
-    
-    function AboutMe(){
-        $("p")("this is my about me page");
-        
-    }
-    
+       
+});
+
+
+
+
+
+
  
  
  
