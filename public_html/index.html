@@ -41,80 +41,11 @@ and open the template in the editor.
             
         </div>
         
+        </header>
+        
+        
         <div class="2">
 
-  <script>
-  $(function() {
-    $( "#accordion" ).accordion({
-      event: "click hoverintent"
-    });
-  });
-  
-   $.event.special.hoverintent = {
-    setup: function() {
-      $( this ).bind( "mouseover", jQuery.event.special.hoverintent.handler );
-    },
-    teardown: function() {
-      $( this ).unbind( "mouseover", jQuery.event.special.hoverintent.handler );
-    },
-    handler: function( event ) {
-      var currentX, currentY, timeout,
-        args = arguments,
-        target = $( event.target ),
-        previousX = event.pageX,
-        previousY = event.pageY;
- 
-      function track( event ) {
-        currentX = event.pageX;
-        currentY = event.pageY;
-      };
- 
-      function clear() {
-        target
-          .unbind( "mousemove", track )
-          .unbind( "mouseout", clear );
-        clearTimeout( timeout );
-      }
- 
-      function handler() {
-        var prop,
-          orig = event;
-  
-  if ( ( Math.abs( previousX - currentX ) +
-            Math.abs( previousY - currentY ) ) < 7 ) {
-          clear();
- 
-          event = $.Event( "hoverintent" );
-          for ( prop in orig ) {
-            if ( !( prop in event ) ) {
-              event[ prop ] = orig[ prop ];
-            }
-          }
-          // Prevent accessing the original event since the new event
-          // is fired asynchronously and the old event is no longer
-          // usable (#6028)
-          delete event.originalEvent;
- 
-          target.trigger( event );
-        } else {
-          previousX = currentX;
-          previousY = currentY;
-          timeout = setTimeout( handler, 100 );
-        }
-      }
- 
-      timeout = setTimeout( handler, 100 );
-      target.bind({
-        mousemove: track,
-        mouseout: clear
-      });
-    }
-  };
-  </script>
-</header>
-<body>
- 
-    
 <div id="accordion">
   <h3>portfolio 1</h3>
   <div>
@@ -148,15 +79,53 @@ and open the template in the editor.
     
     </p>
   </div>
+  <h3>portfolio 3</h3>
+  <div>
+      <p>
+          
+      </p>
+      <p>
+          
+      </p>
+      
+  </div>
 </div>
  
  
-</body>
+
 </html>
               
 </div> 
         
+        <div class="3">
         
+        <style>
+    .toggler { width: 500px; height: 200px; position: relative; }
+    #button { padding: .5em 1em; text-decoration: Italic; }
+    #effect { width: 240px; height: 135px; padding: 0.4em; position: relative; background: blue; }
+    #effect h3 { margin: 0; padding: 0.4em; text-align: center; }
+  </style>
+ 
+
+
+ 
+<div class="toggler">
+  <div id="effect" class="ui-widget-content ui-corner-all">
+    <h3 class="ui-widget-header ui-corner-all">stuff</h3>
+    <p>
+        Hello I added this for fun. 
+    </p>
+  </div>
+    </div>
+  
+  
+ 
+<button id="button" class="ui-state-default ui-corner-all">Click for amazing</button>
+ 
+ 
+    </div>
+        
+
             
             
    
