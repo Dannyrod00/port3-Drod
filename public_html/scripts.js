@@ -125,14 +125,14 @@ function showTheText(){
     $( "#button" ).click(function() {
       if ( state ) {
         $( "#effect" ).animate({
-          backgroundColor: "purple",
-          color: "blue",
+          backgroundColor: "blue",
+          color: "purple",
           width: 500
         }, 1000 );
       } else {
         $( "#effect" ).animate({
-          backgroundColor: "blue",
-          color: "purple",
+          backgroundColor: "purple",
+          color: "blue",
           width: 240
         }, 1000 );
       }
