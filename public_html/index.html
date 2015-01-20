@@ -35,7 +35,8 @@ and open the template in the editor.
                 
                 <h1>Technology_____About Me_____Projects</h1>
                 
-                <h2>hello</h2>
+                <h2 id="hi" >hello</h2>
+                <h2 id="bye" > goo  bye</h2>
 
     </div>
             
@@ -102,7 +103,7 @@ and open the template in the editor.
         <style>
     .toggler { width: 500px; height: 200px; position: relative; }
     #button { padding: .5em 1em; text-decoration: Italic; }
-    #effect { width: 240px; height: 135px; padding: 0.4em; position: relative; background: purple; }
+    #effect { width: 240px; height: 135px; padding: 0.4em; position: relative; background: black; }
     #effect h3 { margin: 0; padding: 0.4em; text-align: center; }
   </style>
  
@@ -120,17 +121,42 @@ and open the template in the editor.
   
   
  
-<button id="button" class="ui-state-default ui-corner-all">Click for amazing</button>
+  <p id="button">hello</p>
  
  
     </div>
         
+          <script>
+  $(function() {
+    $( "#tabs" ).tabs({
+      event: "mouseover"
+    });
+  });
+  </script>
 
-            
-            
-   
-        
-           
+
+ 
+<div id="tabs">
+  <ul>
+    <li><a href="#tabs-1">Nunc tincidunt</a></li>
+    <li><a href="#tabs-2">Proin dolor</a></li>
+    <li><a href="#tabs-3">Aenean lacinia</a></li>
+  </ul>
+  <div id="tabs-1">
+    <p></p>
+  </div>
+  <div id="tabs-2">
+    <p></p>
+  </div>
+  <div id="tabs-3">
+    <p></p>
+    <p></p>
+  </div>
+</div>
+ 
+ 
+
+  
                 <script type="text/javascript" src="scripts.js"></script>
 
                   

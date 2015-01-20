@@ -1,7 +1,7 @@
 
 
 
-
+//this is every thing that has to do with the style of the page
 $("document").ready(function() {
   $("h1").css("font-style", "Italic");
   $("body").css("text-align", "center");
@@ -22,27 +22,22 @@ $("document").ready(function() {
 });
 
 
+$('#hi').bind('visibility', 'visible');
 
-//$('#replaceWText').bind('click', replaceWText);
-//$('#randPara').bind('click', addAPara);
-//$('#').bind('click', );
+$('#bye').bind('click', hideTheText);
+$('#hi').bind('click', showTheText);
 
-$('.h3').bind('visibility', 'visible');
-
-$('.h3').bind('click', hideTheText);
-$('.h3').bind('click', showTheText);
-$('.2').css('opacity', '0.5');
 
 
 
 
 function hideTheText(){
-  $('.h2').hide('slide', {}, 2500);
+  $('.h3').hide('slide', {}, 2500);
   
 }
 
 function showTheText(){
-    $('.h2').show('fold', {}, 2500)
+    $('.h3').show('fold', {}, 2500);
     
 }
 
@@ -51,6 +46,8 @@ function showTheText(){
  
  
  $(function() {
+     
+     $('.2').css('opacity', '0.5');
     $( "#accordion" ).accordion({
       event: "click hoverintent"
     });
@@ -118,7 +115,7 @@ function showTheText(){
   
   
   
-//  extendy thing
+//  code for the color changing extention thing...
   
   $(function() {
     var state = true;
@@ -126,12 +123,12 @@ function showTheText(){
       if ( state ) {
         $( "#effect" ).animate({
           backgroundColor: "blue",
-          color: "purple",
+          color: "black",
           width: 500
         }, 1000 );
       } else {
         $( "#effect" ).animate({
-          backgroundColor: "purple",
+          backgroundColor: "black",
           color: "blue",
           width: 240
         }, 1000 );
