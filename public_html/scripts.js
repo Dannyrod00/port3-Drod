@@ -3,24 +3,25 @@
 
 //this is every thing that has to do with the style of the page
 $("document").ready(function() {
-  $("h1").css("font-style", "Italic");
-  $("body").css("text-align", "center");
-  $("p").css('color', 'purple');
-  $('h1').css("background-color", "blue"); 
-  $('h1').css('border', 'solid');
-  $('h1').css('border-color', 'grey');
-  $('.3').css('text-align', 'center');
+    $("h1").css("font-style", "Italic");
+    $("body").css("text-align", "center");
+    $("p").css('color', 'purple');
+    $('h1').css("background-color", "blue");
+    $('h1').css('border', 'solid');
+    $('h1').css('border-color', 'grey');
+    $('.3').css('text-align', 'center');
+    $('img').css('position', 'center');
+    $('img').css('width', '150');
+    $('img').css('height', '150');
+
 });
-
-
 
 //these are my background color/image
 $("document").ready(function() {
     $("body").css("background-color", " grey");
-    $('body').css('background-image',"url(http://www.aliciargomez.com/images/background.jpg)");
-       
-});
+    $('body').css('background-image', "url(http://www.aliciargomez.com/images/background.jpg)");
 
+});
 
 $('#hi').bind('visibility', 'visible');
 
@@ -31,108 +32,91 @@ $('#hi').bind('click', showTheText);
 
 
 
-function hideTheText(){
-  $('.h3').hide('slide', {}, 2500);
-  
+function hideTheText() {
+    $('.h3').hide('slide', {}, 2500);
+
 }
 
-function showTheText(){
+function showTheText() {
     $('.h3').show('fold', {}, 2500);
-    
+
 }
 
 
 
- 
- 
- $(function() {
-     
-     $('.2').css('opacity', '0.5');
-    $( "#accordion" ).accordion({
-      event: "click hoverintent"
+
+
+$(function() {
+
+    $('.2').css('opacity', '0.5');
+    $("#accordion").accordion({
+        event: "click hoverintent"
     });
-  });
-  
-  $.event.special.hoverintent = {
+});
+
+$.event.special.hoverintent = {
     setup: function() {
-      $( this ).bind( "mouseover", jQuery.event.special.hoverintent.handler );
+        $(this).bind("mouseover", jQuery.event.special.hoverintent.handler);
     },
     teardown: function() {
-      $( this ).unbind( "mouseover", jQuery.event.special.hoverintent.handler );
+        $(this).unbind("mouseover", jQuery.event.special.hoverintent.handler);
     },
-    handler: function( event ) {
-      var currentX, currentY, timeout,
-        args = arguments,
-        target = $( event.target ),
-        previousX = event.pageX,
-        previousY = event.pageY;
- 
-      function track( event ) {
-        currentX = event.pageX;
-        currentY = event.pageY;
-      };
- 
-      function clear() {
-        target
-          .unbind( "mousemove", track )
-          .unbind( "mouseout", clear );
-        clearTimeout( timeout );
-      }
- 
-      function handler() {
-        var prop,
-          orig = event;
-  
-  if ( ( Math.abs( previousX - currentX ) +
-            Math.abs( previousY - currentY ) ) < 7 ) {
-          clear();
- 
-          event = $.Event( "hoverintent" );
-          for ( prop in orig ) {
-            if ( !( prop in event ) ) {
-              event[ prop ] = orig[ prop ];
-            }
-          }
-        
-          delete event.originalEvent;
- 
-          target.trigger( event );
-        } else {
-          previousX = currentX;
-          previousY = currentY;
-          timeout = setTimeout( handler, 100 );
+    handler: function(event) {
+        var currentX, currentY, timeout,
+                args = arguments,
+                target = $(event.target),
+                previousX = event.pageX,
+                previousY = event.pageY;
+
+        function track(event) {
+            currentX = event.pageX;
+            currentY = event.pageY;
         }
-      }
- 
-      timeout = setTimeout( handler, 100 );
-      target.bind({
-        mousemove: track,
-        mouseout: clear
-      });
+        ;
+
+        function clear() {
+            target
+                    .unbind("mousemove", track)
+                    .unbind("mouseout", clear);
+            clearTimeout(timeout);
+        }
+
+        function handler() {
+            var prop,
+                    orig = event;
+
+            if ((Math.abs(previousX - currentX) +
+                    Math.abs(previousY - currentY)) < 7) {
+                clear();
+
+                event = $.Event("hoverintent");
+                for (prop in orig) {
+                    if (!(prop in event)) {
+                        event[ prop ] = orig[ prop ];
+                    }
+                }
+
+                delete event.originalEvent;
+
+                target.trigger(event);
+            } else {
+                previousX = currentX;
+                previousY = currentY;
+                timeout = setTimeout(handler, 100);
+            }
+        }
+
+        timeout = setTimeout(handler, 100);
+        target.bind({
+            mousemove: track,
+            mouseout: clear
+        });
     }
-  };
-  
-  
-  
-  
-//  code for the color changing extention thing...
-  
-  $(function() {
-    var state = true;
-    $( "#button" ).click(function() {
-      if ( state ) {
-        $( "#effect" ).animate({
-          backgroundColor: "blue",
-          color: "black",
-          width: 500
-        }, 1000 );
-      } else {
-        $( "#effect" ).animate({
-          backgroundColor: "black",
-          color: "blue",
-          width: 240
-        }, 1000 );
-      }
-      state = !state;
-    });
-  });
+};
+
+
+
+
+
+
+
