@@ -11,9 +11,12 @@ $("document").ready(function() {
     $('h1').css('border-color', 'grey');
     $('.3').css('text-align', 'center');
     $('img').css('position', 'center');
-    $('img').css('width', '150');
-    $('img').css('height', '150');
-
+    $('img').css('width', '200');
+    $('img').css('height', 'auto');
+    $('#tabs').css('opacity', '1');
+    $('#hide').bind('click', hideThePage);
+    $('#image').css('width', '1000');
+    $('#image').css('height', 'auto');
 });
 
 //these are my background color/image
@@ -23,27 +26,23 @@ $("document").ready(function() {
 
 });
 
-$('#hi').bind('visibility', 'visible');
-
-$('#bye').bind('click', hideTheText);
-$('#hi').bind('click', showTheText);
 
 
 
 
 
-function hideTheText() {
-    $('.h3').hide('slide', {}, 2500);
 
-}
 
-function showTheText() {
-    $('.h3').show('fold', {}, 2500);
+
+function hideThePage() {
+    $('div').hide('slide', {}, 2500);
+    $('#hide').css('visibility', 'visible');
+    $('div').show('slide', {}, 2500);
 
 }
 
 
-
+// accordion hoverment
 
 
 $(function() {
@@ -114,7 +113,22 @@ $.event.special.hoverintent = {
     }
 };
 
-
+  $(function() {
+    var icons = {
+      header: "ui-icon-circle-arrow-e",
+      activeHeader: "ui-icon-circle-arrow-s"
+    };
+    $( "#accordion" ).accordion({
+      icons: icons
+    });
+    $( "#toggle" ).button().click(function() {
+      if ( $( "#accordion" ).accordion( "option", "icons" ) ) {
+        $( "#accordion" ).accordion( "option", "icons", null );
+      } else {
+        $( "#accordion" ).accordion( "option", "icons", icons );
+      }
+    });
+  });
 
 
 
